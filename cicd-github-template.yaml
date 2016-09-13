@@ -187,6 +187,10 @@ objects:
       name: jdk-slave
     name: jdk-jenkins-slave
   spec:
+    containers:
+    - env:
+      - name: HTTP_PROXY
+      - name: HTTPS_PROXY
     output:
       to:
         kind: ImageStreamTag
