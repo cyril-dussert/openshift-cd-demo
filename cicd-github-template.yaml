@@ -375,6 +375,9 @@ objects:
       deploymentconfig: postgresql-sonarqube
     name: postgresql-sonarqube
   spec:
+    resources:
+      limits:
+        memory: 1500Mi
     replicas: 1
     selector:
       app: sonarqube
