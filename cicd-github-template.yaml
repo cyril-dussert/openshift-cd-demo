@@ -203,9 +203,6 @@ objects:
         from:
           kind: DockerImage
           name: centos:7
-        env:
-          - name: HTTP_PROXY
-          - name: HTTPS_PROXY
       type: Docker
     triggers:
     - type: ConfigChange
