@@ -187,7 +187,6 @@ objects:
       name: jdk-slave
     name: jdk-jenkins-slave
   spec:
-    containers:
     output:
       to:
         kind: ImageStreamTag
@@ -195,7 +194,7 @@ objects:
     source:
       contextDir: jenkins-slave
       git:
-        uri: https://github.com/cyril-dussert/openshift-cd-demo.git
+        uri: https://github.com/OpenShiftDemos/openshift-cd-demo.git
         ref: openshift-3.2
       type: Git
     strategy:
@@ -515,4 +514,4 @@ objects:
           kind: ImageStreamTag
           name: sonarqube:5.5
       type: ImageChange
-status: {}
+  status: {}
