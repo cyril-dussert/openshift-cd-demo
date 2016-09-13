@@ -188,9 +188,6 @@ objects:
     name: jdk-jenkins-slave
   spec:
     containers:
-    - env:
-      - name: HTTP_PROXY
-      - name: HTTPS_PROXY
     output:
       to:
         kind: ImageStreamTag
@@ -206,6 +203,9 @@ objects:
         from:
           kind: DockerImage
           name: centos:7
+        env:
+          - name: HTTP_PROXY
+          - name: HTTPS_PROXY
       type: Docker
     triggers:
     - type: ConfigChange
