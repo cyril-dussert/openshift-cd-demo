@@ -133,6 +133,8 @@ objects:
         - env:
           - name: JENKINS_PASSWORD
             value: ${JENKINS_PASSWORD}
+          - name: HTTP_PROXY
+          - name: HTTPS_PROXY
           image: " "
           imagePullPolicy: Always
           name: jenkins
