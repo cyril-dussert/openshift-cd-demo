@@ -375,9 +375,6 @@ objects:
       deploymentconfig: postgresql-sonarqube
     name: postgresql-sonarqube
   spec:
-    resources:
-      limits:
-        memory: 1500Mi
     replicas: 1
     selector:
       app: sonarqube
@@ -495,6 +492,9 @@ objects:
             value: jdbc:postgresql://postgresql-sonarqube/sonar
           - name: SONARQUBE_JDBC_USERNAME
             value: ${POSTGRESQL_USER}
+        - resources:
+            limits:
+              memory: 1500Mi
           image: " "
           imagePullPolicy: IfNotPresent
           name: sonarqube
