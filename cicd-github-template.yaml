@@ -515,4 +515,4 @@ objects:
           kind: ImageStreamTag
           name: sonarqube:5.5
       type: ImageChange
-  status: {}
+status: {}
