@@ -20,8 +20,8 @@ export LD_PRELOAD=libnss_wrapper.so
 export NSS_WRAPPER_PASSWD=${JENKINS_HOME}/passwd
 export NSS_WRAPPER_GROUP=/etc/group
 #Export proxy vars (DO NOT USE proxy)
-export HTTP_PROXY=''
-export HTTPS_PROXY=''
+export http_proxy=''
+export https_proxy=''
 
 # Make sure the Java clients have valid $HOME directory set
 export HOME=${JENKINS_HOME}
@@ -45,7 +45,7 @@ if [[ $# -gt 1 ]]; then
   fi
 
   echo "Downloading ${JENKINS_URL}/jnlpJars/remoting.jar ..."
-  echo "v8"
+  echo "v9"
   curl -vvv ${JENKINS_URL}/jnlpJars/remoting.jar -o ${JAR}
 
   # if -tunnel is not provided try env vars
