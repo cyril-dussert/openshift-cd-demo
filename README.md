@@ -41,7 +41,7 @@ Jenkins needs to access OpenShift API to discover slave images as well accessing
   $ oc policy add-role-to-user edit system:serviceaccount:cicd:default -n dev
   $ oc policy add-role-to-user edit system:serviceaccount:cicd:default -n stage
   ```
-Go on Jenkins administration > Plugins configuration > Advanced and set proxy settings (proxy-internet.internal.fr:3128). Save and check for plugin updates. Then, go on plugin updates (Jenkins administration > Plugins configuration) and update only the Kubernetes plugin. Don't forget to restart Jenkins.
+Go on ```Jenkins administration > Plugins configuration > Advanced``` and set proxy settings (```proxy-internet.internal.fr:3128```). Save and check for plugin updates. Then, go on plugin updates (```Jenkins administration > Plugins configuration```) and update only the Kubernetes plugin. Don't forget to restart Jenkins.
 
 Then, before launch the pre-installed pipeline, you have to open it and save it once (without doing any modification) otherwise it will fail.
 
