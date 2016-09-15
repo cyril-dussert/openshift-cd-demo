@@ -19,7 +19,7 @@ envsubst < ${JENKINS_HOME}/passwd.template > ${JENKINS_HOME}/passwd
 export LD_PRELOAD=libnss_wrapper.so
 export NSS_WRAPPER_PASSWD=${JENKINS_HOME}/passwd
 export NSS_WRAPPER_GROUP=/etc/group
-#Export proxy vars (DO NOT USE proxy)
+#Temporarily unsetting proxy vars
 export http_proxy=''
 export https_proxy=''
 
@@ -45,7 +45,6 @@ if [[ $# -gt 1 ]]; then
   fi
 
   echo "Downloading ${JENKINS_URL}/jnlpJars/remoting.jar ..."
-  echo "v9"
   curl -vvv ${JENKINS_URL}/jnlpJars/remoting.jar -o ${JAR}
 
   # if -tunnel is not provided try env vars
