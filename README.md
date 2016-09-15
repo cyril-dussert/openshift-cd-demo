@@ -49,7 +49,7 @@ Then, before launch the pre-installed pipeline, you have to open it and save it 
 
 On our infrastructure, the main issue is with proxies. The real advantage of using Jenkins on OpenShift infrastrucutre is to dedicate one pod to one action (like executing a Jenkins pipeline). But, to do that, pods must communicate between us and our proxy configuration prevent them to do that correctly. All the modifications I did was to configure the pods to do not use proxy, but at each step (barely), you have to do that at a different level.
 
-Known issue : The Docker image of the slave pod not updating automatically when I push some modifications on GitHub, so sometimes the slave pod is built on an older image than the latest (and without last modifications/fixes). Temporarilty workaround : Manually delete docker images of slave pod (sudo docker rmi''')
+Known issue : The Docker image of the slave pod not updating automatically when I push some modifications on GitHub, so sometimes the slave pod is built on an older image than the latest (and without last modifications/fixes). Temporarilty workaround : Manually delete docker images of slave pod (```sudo docker rmi```) on each node and rebuild the jdk-jenkins-slave image.
 
 The last thing I worked on and which is not fixed now : At one moment during the pipeline execution, the slave pod will try to get a .pom file of jBoss on our nexus local installation but by default, the request goes through proxy so it fails. We have two ways to fix that :
 * Configure to no proxy on jenkins-slave/settings.xml (best solution)
